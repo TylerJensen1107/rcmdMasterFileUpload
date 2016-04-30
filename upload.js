@@ -4,9 +4,18 @@ window.onload = function() {
 };
 
 function uploadFiles() {
-    req = new XMLHttpRequest();
+    movies = new XMLHttpRequest();
     var myFirebaseRef = new Firebase("https://rcmd.firebaseio.com/Movies"); 
-    req.open("GET", "movies.csv");
+    movies.open("GET", "movies.csv");
+    movies.onload = function() {
+      var movies = req.responseText;
+      movies = movies.split("\n");
+      console.log(movies);
+      for(var i = 0; i < 20; i++)
+        addSingleMovie(movies[i], myFirebaseRef);
+    };
+    movies.send(null);
+    books = new XMLHttpRequest();
     req.onload = function() {
       var movies = req.responseText;
       movies = movies.split("\n");
