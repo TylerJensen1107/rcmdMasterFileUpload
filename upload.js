@@ -7,7 +7,7 @@ function uploadFiles() {
     req = new XMLHttpRequest();
     var myFirebaseRef = new Firebase("https://rcmd.firebaseio.com/movies"); 
     req.open("GET", "movies.csv");
-    req.onreadystatechange = function() {
+    req.onload = function() {
       var movies = req.responseText;
       movies = movies.split("\n");
       console.log(movies);
