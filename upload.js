@@ -11,6 +11,7 @@ function uploadFiles() {
       var movies = req.responseText;
       movies = movies.split("\n");
       console.log(movies);
+      addSingleMovie(movies[0])
     };
     req.send(null);
 }
