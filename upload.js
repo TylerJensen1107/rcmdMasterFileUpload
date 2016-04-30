@@ -9,7 +9,7 @@ function uploadFiles() {
     req.open("GET", "movies.csv");
     req.onreadystatechange = function() {
       var movies = req.responseText;
-      movies = movies.split("\\n");
+      movies = movies.split("\n");
       console.log(movies);
     };
     req.send(null);
