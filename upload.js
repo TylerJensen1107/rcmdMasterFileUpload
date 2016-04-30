@@ -5,7 +5,7 @@ window.onload = function() {
 
 function uploadFiles() {
     req = new XMLHttpRequest();
-    var myFirebaseRef = new Firebase("https://rcmd.firebaseio.com/movies"); 
+    var myFirebaseRef = new Firebase("https://rcmd.firebaseio.com/Movies"); 
     req.open("GET", "movies.csv");
     req.onload = function() {
       var movies = req.responseText;
