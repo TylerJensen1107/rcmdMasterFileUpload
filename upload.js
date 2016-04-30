@@ -22,5 +22,5 @@ function addSingleMovie(movie, firebase) {
         name: movie.substring(0, movie.length - 1),
         totalUserLikes: 0,
         related: {}
-      });
+    });
 }
