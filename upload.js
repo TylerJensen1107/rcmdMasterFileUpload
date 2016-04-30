@@ -5,7 +5,7 @@ window.onload = function() {
 
 function uploadFiles() {
     req = new XMLHttpRequest(); 
-    req.open("GET", "movie.csv");
+    req.open("GET", "movies.csv");
     req.onreadystatechange = function() {
       console.log(req.responseText);
     };
