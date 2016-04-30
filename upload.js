@@ -19,7 +19,7 @@ function uploadFiles() {
 function addSingleMovie(movie, firebase) {
     var newPostRef = firebase.push();
       newPostRef.set({
-        name: "gracehop",
+        name: movie,
         totalUserLikes: 0,
         related: {}
       });
