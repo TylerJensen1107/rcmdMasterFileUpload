@@ -11,7 +11,7 @@ function uploadFiles() {
       var movies = req.responseText;
       movies = movies.split("\n");
       console.log(movies);
-      addSingleMovie(movies[0])
+      addSingleMovie(movies[0], myFirebaseRef)
     };
     req.send(null);
 }
