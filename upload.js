@@ -4,10 +4,22 @@ window.onload = function() {
 };
 
 function uploadFiles() {
-    req = new XMLHttpRequest(); 
+    req = new XMLHttpRequest();
+    var myFirebaseRef = new Firebase("https://rcmd.firebaseio.com/movies"); 
     req.open("GET", "movies.csv");
     req.onreadystatechange = function() {
-      console.log(req.responseText);
+      var movies = req.responseText;
+      movies = movies.split("\\n");
+      console.log(movies);
     };
     req.send(null);
+}
+
+function addSingleMovie(movie, firebase) {
+    var newPostRef = firebase.push();
+      newPostRef.set({
+        name: "gracehop",
+        totalUserLikes: 0,
+        related: {}
+      });
 }
